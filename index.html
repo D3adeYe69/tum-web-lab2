@@ -12,41 +12,85 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#hero" class="nav-link">Home</a>
         <a href="#collection" class="nav-link">Collection</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </header>
     <main>
       <section id="hero" class="hero">
-        <h1 class="hero-title">Hearth &amp; Oak</h1>
-        <p class="hero-tagline">Beds, sofas, night stands — furniture for the way you live.</p>
+        <div class="hero-image" role="img" aria-label="Cozy living room with modern furniture"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Hearth &amp; Oak</h1>
+          <p class="hero-tagline">Beds, sofas, night stands — furniture for the way you live.</p>
+        </div>
       </section>
       <section id="collection" class="collection">
         <h2 class="section-title">Our Collection</h2>
-        <div class="collection-grid">
-          <article class="collection-card">
-            <h3>Beds</h3>
-            <p>Solid wood and upholstered beds for every style.</p>
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="assets/bed.png" alt="Upholstered bed with channel-tufted headboard" class="product-img" />
+            <div class="product-info">
+              <h3>Channel-Tufted Upholstered Bed</h3>
+              <p class="product-desc">King-size bed with velvet-style headboard and footboard.</p>
+              <p class="product-price">€1,299</p>
+            </div>
           </article>
-          <article class="collection-card">
-            <h3>Night Stands</h3>
-            <p>Bedside tables that blend function and design.</p>
+          <article class="product-card">
+            <img src="assets/bedroom.png" alt="Natural oak bed with nightstands" class="product-img" />
+            <div class="product-info">
+              <h3>Natural Oak Bed &amp; Nightstands Set</h3>
+              <p class="product-desc">Slatted bed frame with two matching three-drawer nightstands.</p>
+              <p class="product-price">€1,449</p>
+            </div>
           </article>
-          <article class="collection-card">
-            <h3>Sofas</h3>
-            <p>Sectionals, loveseats, and sofas for living rooms.</p>
+          <article class="product-card">
+            <img src="assets/nightstand.png" alt="Minimalist wooden nightstand with two drawers" class="product-img" />
+            <div class="product-info">
+              <h3>Scandinavian Two-Drawer Nightstand</h3>
+              <p class="product-desc">Light wood with contrasting drawer fronts.</p>
+              <p class="product-price">€249</p>
+            </div>
           </article>
-          <article class="collection-card">
-            <h3>Dining &amp; More</h3>
-            <p>Tables, chairs, and accent pieces for the whole home.</p>
+          <article class="product-card">
+            <img src="assets/sofa.png" alt="Light grey modern sofa" class="product-img" />
+            <div class="product-info">
+              <h3>Linen-Look Three-Seater Sofa</h3>
+              <p class="product-desc">Clean lines, textured fabric, cylindrical armrests.</p>
+              <p class="product-price">€799</p>
+            </div>
           </article>
+          <article class="product-card">
+            <img src="assets/dining.png" alt="Oval dining table with velvet chairs" class="product-img" />
+            <div class="product-info">
+              <h3>Oval Dining Set (Table + 6 Chairs)</h3>
+              <p class="product-desc">Solid wood table with dusty rose velvet upholstered chairs.</p>
+              <p class="product-price">€1,499</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="reviews" class="reviews">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="reviews-grid">
+          <blockquote class="review-card">
+            <p class="review-text">The oak bed and nightstands look even better in person. Quality is outstanding and delivery was smooth.</p>
+            <footer class="review-author">— Maria K.</footer>
+          </blockquote>
+          <blockquote class="review-card">
+            <p class="review-text">We bought the sofa and the dining set. Both have transformed our home. Highly recommend Hearth &amp; Oak.</p>
+            <footer class="review-author">— James &amp; Sophie</footer>
+          </blockquote>
+          <blockquote class="review-card">
+            <p class="review-text">The Scandinavian nightstand is exactly what I wanted — simple, sturdy, and it matches our bedroom perfectly.</p>
+            <footer class="review-author">— Tom L.</footer>
+          </blockquote>
         </div>
       </section>
       <section id="about" class="about">
         <h2 class="section-title">Why Hearth &amp; Oak</h2>
         <p class="about-text">We source and craft furniture that lasts — from classic oak beds and night stands to modern sofas and living room sets. Every piece is chosen for quality, comfort, and timeless style so your home feels like you.</p>
       </section>
-      <!-- More sections in following commits -->
     </main>
   </body>
 </html>

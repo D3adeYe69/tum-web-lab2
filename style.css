@@ -36,14 +36,37 @@ body {
 
 /* --- Hero section --- */
 .hero {
-  min-height: 40vh;
+  position: relative;
+  min-height: 55vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   padding: 4rem 1.5rem;
-  background: linear-gradient(180deg, #ebe5dc 0%, #e0d9ce 100%);
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-color: #e0d9ce;
+  background-image: url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(44, 36, 22, 0.75) 0%, transparent 50%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
@@ -51,12 +74,15 @@ body {
   font-weight: 700;
   margin-bottom: 0.75rem;
   letter-spacing: 0.02em;
+  color: #f5f0e8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-tagline {
   font-size: 1.125rem;
   max-width: 28rem;
-  color: #5a4f3f;
+  color: #e8e2d9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Collection section --- */
@@ -74,29 +100,85 @@ body {
   color: #2c2416;
 }
 
-.collection-grid {
+.products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.75rem;
 }
 
-.collection-card {
-  padding: 1.5rem;
+.product-card {
   background: #faf8f5;
   border: 1px solid #e8e2d9;
-  border-radius: 6px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.collection-card h3 {
-  font-size: 1.25rem;
+.product-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 1.25rem;
+}
+
+.product-card h3 {
+  font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #3d3528;
 }
 
-.collection-card p {
-  font-size: 0.9375rem;
+.product-desc {
+  font-size: 0.875rem;
   color: #5a4f3f;
+  margin-bottom: 0.75rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2c2416;
+}
+
+/* --- Reviews section --- */
+.reviews {
+  padding: 4rem 1.5rem;
+  background: #f5f0e8;
+}
+
+.reviews .section-title {
+  margin-bottom: 2rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.review-card {
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e8e2d9;
+  margin: 0;
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #4a3f2f;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.review-author {
+  font-size: 0.875rem;
+  color: #6b5b45;
 }
 
 /* --- About section --- */
