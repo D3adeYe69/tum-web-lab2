@@ -1,1 +1,118 @@
-/* add your CSS here */
+/* --- Base --- */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  color: #2c2416;
+}
+
+/* --- Header / Navigation --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #f5f0e8;
+  border-bottom: 1px solid #ddd8ce;
+  padding: 0.75rem 1.5rem;
+}
+
+.main-nav {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #4a3f2f;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  color: #6b5b45;
+  text-decoration: underline;
+}
+
+/* --- Hero section --- */
+.hero {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, #ebe5dc 0%, #e0d9ce 100%);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-tagline {
+  font-size: 1.125rem;
+  max-width: 28rem;
+  color: #5a4f3f;
+}
+
+/* --- Collection section --- */
+.collection {
+  padding: 4rem 1.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c2416;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+}
+
+.collection-card {
+  padding: 1.5rem;
+  background: #faf8f5;
+  border: 1px solid #e8e2d9;
+  border-radius: 6px;
+}
+
+.collection-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #3d3528;
+}
+
+.collection-card p {
+  font-size: 0.9375rem;
+  color: #5a4f3f;
+}
+
+/* --- About section --- */
+.about {
+  padding: 4rem 1.5rem;
+  background: #f5f0e8;
+}
+
+.about .section-title {
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: 1.0625rem;
+  text-align: center;
+  color: #4a3f2f;
+}
