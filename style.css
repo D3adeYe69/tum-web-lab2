@@ -198,3 +198,36 @@ body {
   text-align: center;
   color: #4a3f2f;
 }
+
+/* --- Contact section --- */
+.contact {
+  padding: 4rem 1.5rem;
+  background: #ebe5dc;
+}
+
+.contact-intro {
+  text-align: center;
+  max-width: 28rem;
+  margin: 0 auto 1.5rem;
+  color: #4a3f2f;
+}
+
+.contact-details {
+  max-width: 24rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-details p {
+  margin-bottom: 0.75rem;
+  color: #2c2416;
+}
+
+.contact-details a {
+  color: #5a4f3f;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
