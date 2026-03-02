@@ -258,3 +258,59 @@ body {
 .contact-details a:hover {
   text-decoration: underline;
 }
+
+/* --- Mobile highlight (mobile-only section) --- */
+.mobile-highlight {
+  padding: 2.5rem 1.5rem 0;
+  background: #f9f5ef;
+  text-align: center;
+}
+
+.mobile-highlight-text {
+  max-width: 28rem;
+  margin: 0 auto 1.25rem;
+  font-size: 0.975rem;
+  color: #4a3f2f;
+}
+
+.mobile-cta-button {
+  border-radius: 999px;
+  padding-inline: 1.75rem;
+  padding-block: 0.5rem;
+  font-weight: 600;
+}
+
+.mobile-only {
+  display: none;
+}
+
+/* --- Responsive tweaks for mobile --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .site-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1.25rem;
+    min-height: 70vh;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .collection,
+  .reviews,
+  .about,
+  .contact {
+    padding: 3rem 1.25rem;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
