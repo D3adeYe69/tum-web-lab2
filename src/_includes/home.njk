@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="site-header">
-      <nav class="main-nav" aria-label="Main navigation">
+      <nav class="main-nav container" aria-label="Main navigation">
         <a href="#hero" class="nav-link">Home</a>
         <a href="#collection" class="nav-link">Collection</a>
         <a href="#reviews" class="nav-link">Reviews</a>
@@ -26,58 +26,68 @@
     <main>
       <section id="hero" class="hero">
         <div class="hero-image" role="img" aria-label="Cozy living room with modern furniture"></div>
-        <div class="hero-content">
+        <div class="hero-content container text-center">
           <h1 class="hero-title">{{ hero_title }}</h1>
           <p class="hero-tagline">{{ hero_tagline }}</p>
           <a href="#collection" class="btn btn-light hero-cta">Shop the collection</a>
         </div>
       </section>
       <section class="mobile-highlight mobile-only">
-        <h2 class="section-title">{{ mobile_highlight_title }}</h2>
-        <p class="mobile-highlight-text">
-          {{ mobile_highlight_text }}
-        </p>
-        <a href="tel:{{ contact_phone | replace(' ', '') }}" class="btn btn-outline-dark mobile-cta-button">
-          {{ mobile_highlight_cta_label }}
-        </a>
+        <div class="container">
+          <h2 class="section-title">{{ mobile_highlight_title }}</h2>
+          <p class="mobile-highlight-text">
+            {{ mobile_highlight_text }}
+          </p>
+          <a href="tel:{{ contact_phone | replace(' ', '') }}" class="btn btn-outline-dark mobile-cta-button">
+            {{ mobile_highlight_cta_label }}
+          </a>
+        </div>
       </section>
       <section id="collection" class="collection">
-        <h2 class="section-title">Our Collection</h2>
-        <div class="products-grid">
-          {% for product in products %}
-          <article class="product-card">
-            <img src="{{ product.image }}" alt="{{ product.alt }}" class="product-img" />
-            <div class="product-info">
-              <h3>{{ product.title }}</h3>
-              <p class="product-desc">{{ product.description }}</p>
-              <p class="product-price">{{ product.price }}</p>
-            </div>
-          </article>
-          {% endfor %}
+        <div class="container">
+          <h2 class="section-title mb-4">Our Collection</h2>
+          <div class="products-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            {% for product in products %}
+            <article class="product-card col">
+              <img src="{{ product.image }}" alt="{{ product.alt }}" class="product-img" />
+              <div class="product-info">
+                <h3>{{ product.title }}</h3>
+                <p class="product-desc">{{ product.description }}</p>
+                <p class="product-price">{{ product.price }}</p>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
         </div>
       </section>
       <section id="reviews" class="reviews">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <div class="reviews-grid">
-          {% for review in reviews %}
-          <blockquote class="review-card">
-            <p class="review-text">{{ review.quote }}</p>
-            <footer class="review-author">{{ review.author }}</footer>
-          </blockquote>
-          {% endfor %}
+        <div class="container">
+          <h2 class="section-title mb-4">What Our Customers Say</h2>
+          <div class="reviews-grid row row-cols-1 row-cols-md-3 g-3">
+            {% for review in reviews %}
+            <blockquote class="review-card col">
+              <p class="review-text">{{ review.quote }}</p>
+              <footer class="review-author">{{ review.author }}</footer>
+            </blockquote>
+            {% endfor %}
+          </div>
         </div>
       </section>
       <section id="about" class="about">
-        <h2 class="section-title">{{ about_title }}</h2>
-        <p class="about-text">{{ about_text }}</p>
+        <div class="container">
+          <h2 class="section-title">{{ about_title }}</h2>
+          <p class="about-text">{{ about_text }}</p>
+        </div>
       </section>
       <section id="contact" class="contact">
-        <h2 class="section-title">{{ contact_title }}</h2>
-        <p class="contact-intro">{{ contact_intro }}</p>
-        <div class="contact-details">
-          <p><strong>Email:</strong> <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
-          <p><strong>Phone:</strong> <a href="tel:{{ contact_phone | replace(' ', '') }}">{{ contact_phone }}</a></p>
-          <p><strong>Address:</strong> {{ contact_address }}</p>
+        <div class="container">
+          <h2 class="section-title">{{ contact_title }}</h2>
+          <p class="contact-intro">{{ contact_intro }}</p>
+          <div class="contact-details">
+            <p><strong>Email:</strong> <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+            <p><strong>Phone:</strong> <a href="tel:{{ contact_phone | replace(' ', '') }}">{{ contact_phone }}</a></p>
+            <p><strong>Address:</strong> {{ contact_address }}</p>
+          </div>
         </div>
       </section>
     </main>
