@@ -1,4 +1,8 @@
 /* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.5;
@@ -304,10 +308,17 @@ body {
   }
 
   .collection,
-  .reviews,
+  .reviews {
+    padding: 2.75rem 1.25rem;
+  }
+
   .about,
   .contact {
-    padding: 3rem 1.25rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
   }
 
   .mobile-only {
@@ -445,16 +456,4 @@ body {
 }
 
 /* --- Desktop layout tweaks --- */
-@media (min-width: 900px) {
-  .hero {
-    flex-direction: row;
-    align-items: flex-end;
-    text-align: left;
-  }
-
-  .hero-content {
-    margin-bottom: 3rem;
-    margin-left: 5%;
-    align-items: flex-start;
-  }
-}
+/* (intentionally left empty for now to keep hero centered on large screens) */
