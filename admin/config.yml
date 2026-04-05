@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: D3adeYe69/tum-web-lab2
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "home"
+    label: "Home Page"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "src/index.md"
+        name: "home"
+        label: "Home Content"
+        fields:
+          - { name: "hero_title", label: "Hero Title", widget: "string" }
+          - { name: "hero_tagline", label: "Hero Tagline", widget: "string" }
+          - { name: "mobile_highlight_title", label: "Mobile Highlight Title", widget: "string" }
+          - { name: "mobile_highlight_text", label: "Mobile Highlight Text", widget: "text" }
+          - { name: "mobile_highlight_cta_label", label: "Mobile Highlight CTA Label", widget: "string" }
+          - name: "products"
+            label: "Products"
+            label_singular: "Product"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "image", label: "Image", widget: "image" }
+              - { name: "alt", label: "Alt Text", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "price", label: "Price", widget: "string" }
+          - name: "reviews"
+            label: "Reviews"
+            label_singular: "Review"
+            widget: "list"
+            fields:
+              - { name: "quote", label: "Quote", widget: "text" }
+              - { name: "author", label: "Author", widget: "string" }
+          - { name: "about_title", label: "About Title", widget: "string" }
+          - { name: "about_text", label: "About Text", widget: "text" }
+          - { name: "contact_title", label: "Contact Title", widget: "string" }
+          - { name: "contact_intro", label: "Contact Intro", widget: "text" }
+          - { name: "contact_email", label: "Contact Email", widget: "string" }
+          - { name: "contact_phone", label: "Contact Phone", widget: "string" }
+          - { name: "contact_address", label: "Contact Address", widget: "string" }
+

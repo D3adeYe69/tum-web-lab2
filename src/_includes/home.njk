@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ hero_title }} — Beds, Sofas &amp; Home Furniture</title>
+    <link rel="stylesheet" href="/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="main-nav container" aria-label="Main navigation">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#collection" class="nav-link">Collection</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-image" role="img" aria-label="Cozy living room with modern furniture"></div>
+        <div class="hero-content container text-center">
+          <h1 class="hero-title">{{ hero_title }}</h1>
+          <p class="hero-tagline">{{ hero_tagline }}</p>
+          <a href="#collection" class="btn btn-light hero-cta">Shop the collection</a>
+        </div>
+      </section>
+      <section class="mobile-highlight mobile-only">
+        <div class="container">
+          <h2 class="section-title">{{ mobile_highlight_title }}</h2>
+          <p class="mobile-highlight-text">
+            {{ mobile_highlight_text }}
+          </p>
+          <a href="tel:{{ contact_phone | replace(' ', '') }}" class="btn btn-outline-dark mobile-cta-button">
+            {{ mobile_highlight_cta_label }}
+          </a>
+        </div>
+      </section>
+      <section id="collection" class="collection">
+        <div class="container">
+          <h2 class="section-title mb-4">Our Collection</h2>
+          <div class="products-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            {% for product in products %}
+            <article class="product-card col">
+              <img src="{{ product.image }}" alt="{{ product.alt }}" class="product-img" />
+              <div class="product-info">
+                <h3>{{ product.title }}</h3>
+                <p class="product-desc">{{ product.description }}</p>
+                <p class="product-price">{{ product.price }}</p>
+              </div>
+            </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <section id="reviews" class="reviews">
+        <div class="container">
+          <h2 class="section-title mb-4">What Our Customers Say</h2>
+          <div class="reviews-grid row row-cols-1 row-cols-md-3 g-3">
+            {% for review in reviews %}
+            <blockquote class="review-card col">
+              <p class="review-text">{{ review.quote }}</p>
+              <footer class="review-author">{{ review.author }}</footer>
+            </blockquote>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about">
+        <div class="container">
+          <h2 class="section-title">{{ about_title }}</h2>
+          <p class="about-text">{{ about_text }}</p>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">{{ contact_title }}</h2>
+          <p class="contact-intro">{{ contact_intro }}</p>
+          <div class="contact-details">
+            <p><strong>Email:</strong> <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+            <p><strong>Phone:</strong> <a href="tel:{{ contact_phone | replace(' ', '') }}">{{ contact_phone }}</a></p>
+            <p><strong>Address:</strong> {{ contact_address }}</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="mascot" aria-label="Hearth &amp; Oak lamp helper" role="complementary">
+      <div class="mascot-body">
+        <div class="mascot-shade">
+          <span class="mascot-eye"></span>
+          <span class="mascot-eye"></span>
+          <span class="mascot-smile"></span>
+        </div>
+        <div class="mascot-stand"></div>
+        <div class="mascot-base"></div>
+      </div>
+      <div class="mascot-tooltip">
+        Welcome home — can I help you find the perfect bed or sofa?
+      </div>
+    </div>
+  </body>
+</html>
+
