@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: D3adeYe69/tum-web-lab2
-  branch: main
+  branch: master
 
 media_folder: "assets"
 public_folder: "/assets"
