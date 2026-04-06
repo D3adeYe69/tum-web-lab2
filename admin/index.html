@@ -9,6 +9,69 @@
 
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      if (!window.CMS) {
+        return;
+      }
+
+      const REPO_OWNER = "D3adeYe69";
+      const REPO_NAME = "tum-web-lab2";
+      const REPO_BRANCH = "master";
+      const PRODUCTS_FOLDER = "src/products";
+
+      function getNumericPrefix(filename) {
+        const match = /^([0-9]+)-/.exec(filename || "");
+        return match ? Number(match[1]) : 0;
+      }
+
+      async function getNextProductId() {
+        const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${PRODUCTS_FOLDER}?ref=${encodeURIComponent(REPO_BRANCH)}`;
+        const response = await fetch(url, {
+          headers: {
+            Accept: "application/vnd.github+json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`Failed to list products: ${response.status}`);
+        }
+
+        const files = await response.json();
+        if (!Array.isArray(files)) {
+          return 1;
+        }
+
+        const maxId = files.reduce((max, file) => Math.max(max, getNumericPrefix(file.name)), 0);
+        return maxId + 1;
+      }
+
+      CMS.registerEventListener({
+        name: "preSave",
+        handler: async ({ entry }) => {
+          const data = entry.get("data");
+          const collection = entry.get("collection");
+          const currentId = Number(data.get("id"));
+
+          if (collection !== "products") {
+            return data;
+          }
+
+          if (Number.isInteger(currentId) && currentId > 0) {
+            return data;
+          }
+
+          try {
+            const nextId = await getNextProductId();
+            return data.set("id", nextId);
+          } catch (error) {
+            console.error("Auto-ID generation failed", error);
+            return data;
+          }
+        },
+      });
+    })();
+  </script>
 </body>
 
 </html>
