@@ -47,15 +47,17 @@
         <div class="container">
           <h2 class="section-title mb-4">Our Collection</h2>
           <div class="products-grid row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-            {% for product in products %}
+            {% for product in collections.products %}
+            {% if product.data.is_hidden != true %}
             <article class="product-card col">
-              <img src="{{ product.image }}" alt="{{ product.alt }}" class="product-img" />
+              <img src="{{ product.data.image }}" alt="{{ product.data.alt }}" class="product-img" />
               <div class="product-info">
-                <h3>{{ product.title }}</h3>
-                <p class="product-desc">{{ product.description }}</p>
-                <p class="product-price">{{ product.price }}</p>
+                <h3>{{ product.data.title }}</h3>
+                <p class="product-desc">{{ product.data.description }}</p>
+                <p class="product-price">{{ product.data.price }}</p>
               </div>
             </article>
+            {% endif %}
             {% endfor %}
           </div>
         </div>

@@ -24,16 +24,6 @@ collections:
           - { name: "mobile_highlight_title", label: "Mobile Highlight Title", widget: "string" }
           - { name: "mobile_highlight_text", label: "Mobile Highlight Text", widget: "text" }
           - { name: "mobile_highlight_cta_label", label: "Mobile Highlight CTA Label", widget: "string" }
-          - name: "products"
-            label: "Products"
-            label_singular: "Product"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "image", label: "Image", widget: "image" }
-              - { name: "alt", label: "Alt Text", widget: "string" }
-              - { name: "description", label: "Description", widget: "text" }
-              - { name: "price", label: "Price", widget: "string" }
           - name: "reviews"
             label: "Reviews"
             label_singular: "Review"
@@ -48,4 +38,25 @@ collections:
           - { name: "contact_email", label: "Contact Email", widget: "string" }
           - { name: "contact_phone", label: "Contact Phone", widget: "string" }
           - { name: "contact_address", label: "Contact Address", widget: "string" }
+
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "src/products"
+    create: true
+    delete: true
+    slug: "{{fields.id}}-{{slug}}"
+    summary: "#{{id}} - {{title}}"
+    editor:
+      preview: false
+    fields:
+      - { name: "id", label: "ID", widget: "number", value_type: "int", min: 1 }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "image", label: "Image", widget: "image" }
+      - { name: "alt", label: "Alt Text", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "price", label: "Price", widget: "string" }
+      - { name: "is_hidden", label: "Hide Product", widget: "boolean", default: false, required: false }
+      - { name: "tags", label: "Tags", widget: "hidden", default: "products" }
+      - { name: "permalink", label: "Permalink", widget: "hidden", default: false }
 

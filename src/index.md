@@ -1,31 +1,5 @@
 ---
 hero_tagline: Beds, sofas, night stands — furniture for the way you live.
-products:
-  - title: Channel-Tufted Upholstered Bed
-    image: /tum-web-lab2/assets/bed.png
-    alt: Upholstered bed with channel-tufted headboard
-    description: King-size bed with velvet-style headboard and footboard.
-    price: €1,299
-  - title: Natural Oak Bed & Nightstands Set
-    image: /tum-web-lab2/assets/bedroom.png
-    alt: Natural oak bed with nightstands
-    description: Slatted bed frame with two matching three-drawer nightstands.
-    price: €1,449
-  - title: Scandinavian Two-Drawer Nightstand
-    image: /tum-web-lab2/assets/nightstand.png
-    alt: Minimalist wooden nightstand with two drawers
-    description: Light wood with contrasting drawer fronts.
-    price: €249
-  - title: Linen-Look Three-Seater Sofa
-    image: /tum-web-lab2/assets/sofa.png
-    alt: Light grey modern sofa
-    description: Clean lines, textured fabric, cylindrical armrests.
-    price: €799
-  - title: Oval Dining Set (Table + 6 Chairs)
-    image: /tum-web-lab2/assets/dining.png
-    alt: Oval dining table with velvet chairs
-    description: Solid wood table with dusty rose velvet upholstered chairs.
-    price: €1,499
 about_title: Why Hearth & Oak
 layout: home.njk
 hero_title: Hearth & Oak
