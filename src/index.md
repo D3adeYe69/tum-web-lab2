@@ -26,6 +26,11 @@ products:
     alt: Oval dining table with velvet chairs
     description: Solid wood table with dusty rose velvet upholstered chairs.
     price: €1,499
+  - title: Scaun
+    alt: scaun pro max
+    description: scaun solid
+    price: $122
+    image: /tum-web-lab2/assets/fig6_electrical_schematic.png
 about_title: Why Hearth & Oak
 layout: home.njk
 hero_title: Hearth & Oak
@@ -42,9 +47,6 @@ reviews:
   - quote: We bought the sofa and the dining set. Both have transformed our home.
       Highly recommend Hearth & Oak.
     author: — James & Sophie
-  - quote: The Scandinavian nightstand is exactly what I wanted — simple, sturdy,
-      and it matches our bedroom perfectly.
-    author: — Tom L.
 about_text: We source and craft furniture that lasts — from classic oak beds and
   night stands to modern sofas and living room sets. Every piece is chosen for
   quality, comfort, and timeless style so your home feels like you.
