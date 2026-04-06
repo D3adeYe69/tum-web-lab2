@@ -40,6 +40,9 @@ reviews:
   - quote: We bought the sofa and the dining set. Both have transformed our home.
       Highly recommend Hearth & Oak.
     author: — James & Sophie
+  - quote: We bought the oak bed and the dining set. Both have transformed our home.
+      Highly recommend Hearth & Oak.
+    author: — John & Mary
 about_text: We source and craft furniture that lasts — from classic oak beds and
   night stands to modern sofas and living room sets. Every piece is chosen for
   quality, comfort, and timeless style so your home feels like you.
