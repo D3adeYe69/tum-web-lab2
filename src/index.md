@@ -53,5 +53,4 @@ contact_phone: +39 123 456 789
 contact_address: Via del Legno 1, 20100 Milano
 ---
 
-<!-- The page body is rendered entirely from front matter via home.njk -->
 
