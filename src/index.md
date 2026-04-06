@@ -34,6 +34,8 @@ mobile_highlight_text: Browse our furniture collection on your phone and save
   your favorites for your next showroom visit.
 mobile_highlight_cta_label: Tap to call our showroom
 reviews:
+  - quote: Super site
+    author: Liviu
   - quote: The oak bed and nightstands look even better in person. Quality is
       outstanding and delivery was smooth.
     author: — Maria K.
@@ -43,8 +45,6 @@ reviews:
   - quote: The Scandinavian nightstand is exactly what I wanted — simple, sturdy,
       and it matches our bedroom perfectly.
     author: — Tom L.
-  - quote: Super site
-    author: Liviu
 about_text: We source and craft furniture that lasts — from classic oak beds and
   night stands to modern sofas and living room sets. Every piece is chosen for
   quality, comfort, and timeless style so your home feels like you.
