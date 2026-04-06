@@ -26,11 +26,6 @@ products:
     alt: Oval dining table with velvet chairs
     description: Solid wood table with dusty rose velvet upholstered chairs.
     price: €1,499
-  - title: Scaun
-    alt: scaun pro max
-    description: scaun solid
-    price: $122
-    image: /tum-web-lab2/assets/fig6_electrical_schematic.png
 about_title: Why Hearth & Oak
 layout: home.njk
 hero_title: Hearth & Oak
