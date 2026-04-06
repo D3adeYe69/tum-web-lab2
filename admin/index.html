@@ -20,8 +20,30 @@
       const REPO_BRANCH = "master";
       const PRODUCTS_FOLDER = "src/products";
 
-      function getNumericPrefix(filename) {
-        const match = /^([0-9]+)-/.exec(filename || "");
+      function decodeBase64Content(content) {
+        const raw = atob((content || "").replace(/\n/g, ""));
+        const bytes = Uint8Array.from(raw, (char) => char.charCodeAt(0));
+        return new TextDecoder().decode(bytes);
+      }
+
+      async function getProductIdFromFile(file) {
+        if (!file || file.type !== "file" || !file.name.endsWith(".md")) {
+          return 0;
+        }
+
+        const response = await fetch(file.url, {
+          headers: {
+            Accept: "application/vnd.github+json",
+          },
+        });
+
+        if (!response.ok) {
+          return 0;
+        }
+
+        const details = await response.json();
+        const decoded = decodeBase64Content(details.content);
+        const match = /^id:\s*([0-9]+)$/m.exec(decoded);
         return match ? Number(match[1]) : 0;
       }
 
@@ -42,7 +64,8 @@
           return 1;
         }
 
-        const maxId = files.reduce((max, file) => Math.max(max, getNumericPrefix(file.name)), 0);
+        const ids = await Promise.all(files.map(getProductIdFromFile));
+        const maxId = ids.reduce((max, id) => Math.max(max, Number.isFinite(id) ? id : 0), 0);
         return maxId + 1;
       }
 

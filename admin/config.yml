@@ -45,19 +45,12 @@ collections:
     folder: "src/products"
     create: true
     delete: true
-    slug: "{{fields.id}}-{{slug}}"
+    slug: "{{slug}}"
     summary: "#{{id}} - {{title}}"
     editor:
       preview: false
     fields:
-      -
-        name: "id"
-        label: "ID"
-        widget: "number"
-        value_type: "int"
-        min: 1
-        required: false
-        hint: "Leave empty to auto-assign the next ID on save."
+      - { name: "id", label: "ID", widget: "hidden", required: false }
       - { name: "title", label: "Title", widget: "string" }
       - { name: "image", label: "Image", widget: "image" }
       - { name: "alt", label: "Alt Text", widget: "string" }
